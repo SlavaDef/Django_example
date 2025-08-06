@@ -1,0 +1,14 @@
+<!--успадковуємось від layout.html -->
+
+{% extends  'main/layout.html' %}
+
+{% block title %} About page {% endblock %}
+
+{% block body %} <h1>This is about page </h1>
+
+<!--так ми можемо вставляти якісь куски коду з інших місць -->
+{% include 'main/test.html' %}
+{% include 'main/test.html' %}
+{% include 'main/test.html' %}
+
+{% endblock %}

@@ -1,0 +1,40 @@
+1. Для Windows PowerShell правильний спосіб активації віртуального середовища:
+
+.\.venv\Scripts\Activate.ps1
+
+2. Коли ви бачите префікс `(.venv)` перед командним рядком (що означає, що віртуальне середовище активовано), виконайте:
+
+  pip install django
+
+3. django-admin startproject first_project - створення проєкту
+
+4. Перейдіть у директорію проєкту:
+
+cd first_project
+
+5. Запустіть сервер розробки, щоб перевірити, що все працює:
+
+python manage.py runserver
+
+6. створення програм - python manage.py startapp main ( main назва папки) створюється в директорії ( cd first_project )
+
+7. далі програму треба зарееструвати у settings -> INSTALLED_APPS = [ 'main', .....
+
+8. далі в urls.py прописуємо юрл які хочемо відслідковувати (home....) ->
+
+from django.urls import path, include ->
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('main.urls')),
+]
+
+9. Створюємо в main -> urls.py ->
+
+from django.urls import path
+from . import views
+
+
+urlpatterns = [
+
+    path('', views.index), # якщо головна сторінка то виклик конкрет функції якоїсь
+]
