@@ -5,4 +5,5 @@ from . import views
 urlpatterns = [
 
     path('', views.index), # якщо головна сторінка то виклик конкрет функції якоїсь
+    path('about/', views.about),
 ]

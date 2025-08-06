@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title> My title</title>
-</head>
-<body>
+{% extends  'main/layout.html' %}
 
-<h1> some text</h1>
+{% block title %} Main page {% endblock %}
 
-</body>
-</html>
+{% block body %} <h1>Main page of html form</h1>
+<p> </p>
+
+<ul style="list-style-type: square;">
+     <li>one</li>
+    <li>two</li>
+    <li>three</li>
+</ul>
+
+{% endblock %}
