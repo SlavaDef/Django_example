@@ -38,3 +38,11 @@ urlpatterns = [
 
     path('', views.index), # якщо головна сторінка то виклик конкрет функції якоїсь
 ]
+
+10. https://fontawesome.com/icons сайт іконок
+
+11. щоб іконки працювали треба завантажити
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+12.
+

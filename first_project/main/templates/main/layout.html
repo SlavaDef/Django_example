@@ -17,14 +17,14 @@
     <span class="logo"> SL_DEF </span>
     <h3>Navigation</h3>
     <ul>
-        <a href="">
-            <li><i class="fa-solid fa-house"></i>Main</li>
+        <a href="{% url 'home' %}">
+            <li><i class="fa-solid fa-house"></i> Main</li> <!-- class="fa-solid fa-house" це іконка  -->
+        </a>
+        <a href="{% url 'about' %}">
+            <li><i class="fa-solid fa-truck"></i> About us</li>
         </a>
         <a href="">
-            <li><i class="fa-solid fa-truck"></i>About us</li>
-        </a>
-        <a href="">
-            <li><i class="fa-solid fa-eye"></i>Contacts</li>
+            <li><i class="fa-solid fa-eye"></i>  Contacts</li>
         </a>
     </ul>
 

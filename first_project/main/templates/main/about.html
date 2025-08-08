@@ -4,11 +4,17 @@
 
 {% block title %} About page {% endblock %}
 
-{% block body %} <h1>This is about page </h1>
+{% block body %}
 
-<!--так ми можемо вставляти якісь куски коду з інших місць -->
-{% include 'main/test.html' %}
-{% include 'main/test.html' %}
-{% include 'main/test.html' %}
+<div class="features">
+
+<h1> Hello, this is about page!  </h1>
+    <p> Lorem is here? Wellcome on the our site of spetfical guds! </p>
+    <p> {% include 'main/test.html' %} </p>
+    <button class="btn btn-danger"> pushe me </button>
+
+</div>
+
+<!-- {% include 'main/test.html' %} так ми можемо вставляти якісь куски коду з інших місць -->
 
 {% endblock %}
