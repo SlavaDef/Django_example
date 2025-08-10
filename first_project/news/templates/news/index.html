@@ -1,39 +1,17 @@
 {% extends  'main/layout.html' %}
 
-{% block title %} {{ title }} {% endblock %}
+{% block title %} Sait news {% endblock %}
 
 {% block body %}
 
 <div class="features">
 
-<h1> {{ title }} of html form </h1>
+<h1> Sait news from html form </h1>
     <p>Lorem is here? Wellcome on the our site of spetfical guds!</p>
 
      <!-- фильтр в даному випадку напис на кнопці в верхньому регістрі застосували фільтер-->
     <button class="btn btn-warning">{% filter upper %} To the page about us {% endfilter %}</button>
 
-    {% for el in values %}
-
-    <p>{{ el  }}</p>
-
-    {% endfor %}
-
-    <p> {{ obj }}</p>
-    <p> {{ obj.car }}</p>
-
-     {% for el in obj %}
-
-    <p>{{ el  }}</p>
-
-    {% endfor %}
-
-     {% for el in values %}
-
-     {% if el == 'Hello' %} <!-- з умовою -->
-    <p>{{ el  }}</p>
-      {% endif %}
-
-    {% endfor %}
 
 </div>
 

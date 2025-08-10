@@ -21,10 +21,13 @@
             <li><i class="fa-solid fa-house"></i> Main</li> <!-- class="fa-solid fa-house" це іконка  -->
         </a>
         <a href="{% url 'about' %}">
-            <li><i class="fa-solid fa-truck"></i> About us</li>
+            <li><i class="fa-solid fa-handshake"></i> About us</li>
         </a>
-        <a href="">
-            <li><i class="fa-solid fa-eye"></i>  Contacts</li>
+        <a href="{% url 'news_home' %}">
+            <li><i class="fa-solid fa-newspaper"></i>  News</li>
+        </a>
+         <a href="{% url 'news_home' %}">
+            <li><i class="fa-solid fa-address-book"></i>  Contacts</li>
         </a>
     </ul>
 
