@@ -7,10 +7,23 @@
 <div class="features">
 
 <h1> Sait news from html form </h1>
-    <p>Lorem is here? Wellcome on the our site of spetfical guds!</p>
+    {% if news %}
+    {% for el in news %}
 
-     <!-- фильтр в даному випадку напис на кнопці в верхньому регістрі застосували фільтер-->
-    <button class="btn btn-warning">{% filter upper %} To the page about us {% endfilter %}</button>
+    <div class="alert alert-warning">
+        <h3>{{ el.title }}</h3>
+        <p> {{ el.anons }}</p>
+        <p> {{ el.date }}</p>
+
+
+    </div>
+    {% endfor %}
+    {% else %}
+    <p> Поки не має новин </p>
+    {% endif %}
+
+
+
 
 
 </div>

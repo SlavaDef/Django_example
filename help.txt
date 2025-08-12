@@ -52,7 +52,8 @@ urlpatterns = [
 
 14. далі створюємо адміністратора через термінал python manage.py createsuperuser
 
-15. щоб бачити всі таблиці у файлі admin.py потрібно зараєструвати ту таблицю
+15. щоб бачити всі таблиці у файлі admin.py потрібно зараєструвати ту таблицю у  admin.site.register(Articles)
+
 from first_project.news.models import Articles
 
 admin.site.register(Articles)
@@ -61,8 +62,41 @@ admin.site.register(Articles)
         verbose_name = 'Новина'
         verbose_name_plural = 'Новини'
 
- прописуємо щоб змінити назву таблиці
+ прописуємо щоб змінити назву таблиці  у models.py (news)
 
- 17.
+ 17.  Ось способи “жорстко” перезавантажити сторінку після змін у CSS та гарантувати, що підтягнеться свіжа версія.
+   Швидкі дії в браузері (Windows):
+-  Chrome/Edge: Ctrl+F5 або Ctrl+Shift+R
 
+18. створюємо файл forms.py y news для роботи форми з моделью
+
+from .models import Articles
+from django.forms import ModelForm
+
+class ArticleForm(ModelForm):
+    class Meta:
+        model = Articles
+        fields = ['title', 'anons', 'content', 'date']
+
+19. створюємо можливість працювати з формочкою у views.py дописуємо
+from .forms import ArticleForm
+def create(request):
+    form = ArticleForm()
+    data = {'form':form }
+    return render(request, 'news/create.html', data)
+
+
+20. форма вводу але через джанго:
+
+widgets = {
+             'title': TextInput(attrs={'class':'form-control', 'placeholder':'Назва статті'}),
+             'anons': TextInput(attrs={'class': 'form-control', 'placeholder': 'Анонс'}),
+             'content': Textarea(attrs={'class': 'form-control', 'placeholder': 'текст статті'}),
+             'date': DateTimeInput(attrs={'class': 'form-control', 'type': 'datetime-local'}),
+
+        }
+
+21. далі доопрацювання метода у views.py
+
+22.
 

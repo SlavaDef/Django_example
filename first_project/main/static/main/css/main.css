@@ -2,6 +2,7 @@ body {
    background: yellow;
 }
 
+/* стилі для блоку  aside */
 
 aside {
      float: left;
@@ -59,6 +60,8 @@ aside ul li:hover, aside ul a:hover{
          transform: scale(1.05);
 }
 
+/* стилі для класу features в <div> в about.html and index.html */
+
 main .features {
      float: left;
      width: 75%;
@@ -78,5 +81,23 @@ main .features p {
      margin: 20px auto;
      font-family: "Comic Sans MS", cursive;
 
+}
+
+/* стилі для класу alert-warning в <div> index.html (prog news) */
+
+.alert-warning {
+    float: left;
+    clear: both;
+    width: 400px;
+    margin: 20px 34%;
+    text-align: left;
+
+}
+/* крапка означає «клас», а без крапки — «тег (елемент)» */
+
+form {              /* стилі для форми введення статті y create.html  без крапки */
+   margin-left: 32%; /*  Відступ зліва від елемента, батьківського контейнера  */
+   width: 500px;   /*  Фіксована ширина елемента 500 пікселів */
+   margin-top: 50px; /* Відступ зверху (простір між елементом та попереднім сусідом/краєм контейнера) */
 
 }

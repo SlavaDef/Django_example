@@ -8,6 +8,13 @@ class Articles(models.Model):
     content = models.TextField("Новина")
     date = models.DateTimeField("Дата публікації")  #(auto_now_add=True)
 
+
+    # завдяки методу виводимо тайтл новини
+    # тепер вивід такий <QuerySet [<Articles: Новина: some>, <Articles: Новина: UK....
+    def __str__(self):
+        return f'Новина: {self.title}'
+
+
     class Meta:
         verbose_name = 'Новина'
         verbose_name_plural = 'Новини'
