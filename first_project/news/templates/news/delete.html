@@ -1,0 +1,21 @@
+{% extends  'main/layout.html' %}
+
+{% block title %} Видалити новину з сайту {% endblock %}
+
+{% block body %}
+
+<div class="features">
+
+<h1> Ви впевнені що хочете видалити цю новину? </h1>
+    <form method="post">
+         {% csrf_token %}
+        <button class="btn btn-danger" type="submit">Так, видалити</button>
+  <a href="{% url 'news-detail' article.id %}" class="btn btn-info">  ні, я передумав  </a>
+
+
+    </form>
+
+
+</div>
+
+{% endblock %}

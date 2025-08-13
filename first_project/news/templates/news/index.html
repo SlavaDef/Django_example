@@ -14,6 +14,7 @@
         <h3>{{ el.title }}</h3>
         <p> {{ el.anons }}</p>
         <p> {{ el.date }}</p>
+        <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Читати далі</a>
 
 
     </div>
@@ -21,10 +22,6 @@
     {% else %}
     <p> Поки не має новин </p>
     {% endif %}
-
-
-
-
 
 </div>
 

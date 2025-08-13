@@ -1,17 +1,30 @@
 body {
    background: yellow;
+   min-height: 100vh;
+   display: flex;
+   align-items: stretch; /* за замовчуванням stretch, але вкажемо явно */
+   margin: 0; /* на випадок, якщо є дефолтні відступи */
+
 }
+
+main {
+  flex: 1 1 auto;
+}
+
 
 /* стилі для блоку  aside */
 
 aside {
-     float: left;
+     /*float: left; */
      background: #181818;
      width: 20%;
      padding: 2.5%;
-     height: 100vh;
+    /* height: 100vh; */
      color: #fff;
-     border-right: 5px soled #4d4d4d;
+     border-right: 5px solid #4d4d4d;
+     flex: 0 0 25%;          /* ширина колонки ~25% */
+     box-sizing: border-box; /* щоб падінги враховувались у ширину */
+
 
 }
 
@@ -101,3 +114,27 @@ form {              /* стилі для форми введення статт�
    margin-top: 50px; /* Відступ зверху (простір між елементом та попереднім сусідом/краєм контейнера) */
 
 }
+
+ /*  зробив клас для відображення тексту статтів по лівому краю  details_view.html  */
+
+main .features2 {
+     float: left;
+     width: 75%;
+     margin-top: 100px;
+     text-align: left;
+
+}
+
+main .features2 h1 {
+     margin-left: 15%; /*  Відступ зліва від елемента, батьківського контейнера  */
+     font-family: "Comic Sans MS", cursive;
+
+}
+
+main .features2 p {
+     font-family: "Comic Sans MS", cursive;
+     margin-left: 5%;
+
+}
+
+
