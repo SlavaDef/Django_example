@@ -1,0 +1,41 @@
+{% extends  'main/layout.html' %}
+
+{% load static %}
+
+
+{% block title %} Contacts page {% endblock %}
+
+{% block body %}
+
+
+
+<div class="features">
+
+<h1> Contacts page  </h1>
+
+
+
+    <h2> Ви можете надсилати нам повідомлення електронною поштою на таку адресу: ukrainian.section@bbc.co.uk </h2>
+    <p>Ви також можете написати нам на адресу в Україні:</p>
+    <p>Київ 1
+        Головпоштамт,
+         абонентська скринька 99,
+        Українській службі Бі-Бі-Сі.</p>
+    <p>Наш телефон чи факс у Києві - (380 44) 229 55 79, або 230 23 96</p>
+    <img src="{% static 'main/img/animal_4.png'%}" alt="">
+    <p> або напишіть нам на адресу в Лондоні</p>
+    <p> BBC Ukrainian Service,
+Room 641 SE,
+Bush House,
+The Strand,
+London WC2B 4PH
+United Kingdom
+Telephone: +44 (0)171 557 2588
+Fax: +44 (0)171 557 1915</p>
+
+    <p><i class="fa-solid fa-envelope"></i> Наша електронна пошта: ukrainian.section@bbc.co.uk</p>
+
+
+</div>
+
+{% endblock %}

@@ -98,5 +98,7 @@ widgets = {
 
 21. далі доопрацювання метода у views.py
 
-22.
+22. <img src="{% static 'main/img/BBC.png'%}" alt=""><img src="{% static 'main/img/BBC.png'%}" alt="">
+
+https://www.youtube.com/watch?v=6K83dgjkQNw&t=15s
 

@@ -1,0 +1,26 @@
+{% extends  'notes/base.html' %}
+{% load static %}
+
+{% block title %}  {{ title }} {% endblock %}
+
+{% block body %}
+
+<div class="features">
+
+<h2> Hello, only frech news here!!! </h2>
+
+    <p>{% include 'main/test.html' %}</p>
+
+    {% for el in tasks %}
+    <div class="alert alert-warning mt-2">
+        <h3> {{ el.title }} </h3>
+        <h4> {{ el.description }} </h4>
+        <h4> {{ el.completed}} </h4>
+        <h4> {{ el.created}} </h4>
+
+        </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

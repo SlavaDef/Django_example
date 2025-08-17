@@ -1,17 +1,20 @@
 <!--успадковуємось від layout.html -->
 
 {% extends  'main/layout.html' %}
-
+{% load static %}
 {% block title %} About page {% endblock %}
 
 {% block body %}
 
+
+
 <div class="features">
 
-<h1> Hello, this is about page!  </h1>
-    <p> Lorem is here? Wellcome on the our site of spetfical guds! </p>
-    <p> {% include 'main/test.html' %} </p>
-    <button class="btn btn-danger"> pushe me </button>
+<h2> Hello, only frech news here!!! </h2>
+    <p><img src="{% static 'main/img/about.png'%}" alt="">  </p>
+    <p>{% include 'main/test.html' %}</p>
+
+    <button class="btn btn-danger" > pushe me </button>
 
 </div>
 

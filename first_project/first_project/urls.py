@@ -1,3 +1,5 @@
+#  це  головний файл для відслідковування юрл адрес
+
 """
 URL configuration for first_project project.
 
@@ -21,8 +23,10 @@ from django.conf import settings
 
 # + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) також підключили css
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls')),
+    path('', include('main.urls')), # головна сторінка і всі похідні від неї включно з юрл з notes-> urls.py
+    path('note/', include('notes.urls')),
     path('news/', include('news.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

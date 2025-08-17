@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+
 <body>
 
 <aside>
@@ -26,8 +27,11 @@
         <a href="{% url 'news_home' %}">
             <li><i class="fa-solid fa-newspaper"></i>  News</li>
         </a>
-         <a href="{% url 'news_home' %}">
+         <a href="{% url 'contacts' %}">
             <li><i class="fa-solid fa-address-book"></i>  Contacts</li>
+        </a>
+        <a href="{% url 'note' %}">
+            <li><i class="fa-solid fa-note-sticky"></i>  Notes</li>
         </a>
         <a href="{% url 'create' %}"> <!-- пропис в url.py -->
             <li><button class="btn btn-info"><i class="fa-solid fa-comment"></i>"  Add news</button></li>
@@ -37,6 +41,11 @@
 </aside>
 
 <main>
+    <div class="banner">
+    <img src="{% static 'main/img/BBC.png' %}" alt="Банер">
+  </div>
+
+
     {% block body %}{% endblock %}
     </main>
 

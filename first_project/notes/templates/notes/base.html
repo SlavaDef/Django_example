@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="{% static 'main/css/main.css' %}"> -->
+
+</head>
+
+<body>
+
+<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+     <span class="logo"> SL_DEF </span>
+     <nav class="my-2 my-md-0 ml-auto">
+
+    <a class="p-2 text-dark" href="/">Features</a>
+    <a class="p-2 text-dark" href="/">Enterprise</a>
+
+     </nav>
+</div>
+
+<div class="container">
+    {% block body %}{% endblock %}
+</div>
+
+
+
+</body>
+</html>
