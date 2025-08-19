@@ -1,0 +1,27 @@
+{% extends  'tasks/base.html' %}
+{% load static %}
+
+{% block title %}  Updating task {% endblock %}
+
+{% block body %}
+
+<h1> Update Task</h1>
+
+<div class="features">
+
+<h1> Changing news </h1>
+
+    <form method="post">
+        {% csrf_token %} <!-- обовязково треба додати щоб не було помилок, вбудов токен який захищає від помилок -->
+        {{ form.title }}<br>
+        {{ form.description }}<br>
+        {{ form.completed }}<br>
+        <span> {{error}} </span>
+
+        <button class="btn btn-success" type="submit"> Change task</button>
+
+    </form>
+    </div>
+
+
+{% endblock %}

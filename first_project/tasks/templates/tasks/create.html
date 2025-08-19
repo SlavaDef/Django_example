@@ -1,0 +1,35 @@
+{% extends  'tasks/base.html' %}
+{% load static %}
+
+{% block title %}  Creating task {% endblock %}
+
+{% block body %}
+
+<h1> Creating Task</h1>
+
+<form method="post">
+
+     {% csrf_token %}
+
+    {{ form.title }}<br>
+    {{ form.description }}<br>
+    {{ form.completed }}<br>
+           <p> </p>
+    <span> {{error}} </span>
+
+    <!-- <input type="text" placeholder="Enter title" class="form-control"><br>
+    <textarea placeholder="Enter description" class="form-control"></textarea> <br>
+     <label>
+        <input type="checkbox" name="completed"> Completed
+    </label><br>  -->
+
+
+    <button type="submit" class="btn btn-success">Save</button>
+
+
+
+
+</form>
+
+
+{% endblock %}

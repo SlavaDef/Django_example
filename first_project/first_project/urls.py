@@ -26,7 +26,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls')), # головна сторінка і всі похідні від неї включно з юрл з notes-> urls.py
-    path('note/', include('notes.urls')),
+    path('', include('main.urls')), # головна сторінка і всі похідні від неї включно з юрл з tasks-> urls.py
     path('news/', include('news.urls')),
+    path('tasks/', include('tasks.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

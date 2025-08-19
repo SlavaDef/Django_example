@@ -1,0 +1,43 @@
+{% extends  'tasks/base.html' %}
+{% load static %}
+
+{% block title %}  {{ title }} {% endblock %}
+
+{% block body %}
+
+<div class="features">
+
+    {% if tasks %}
+    {% for el in tasks %}
+
+    <div class="alert alert-warning mt-2">
+        <h3> {{ el.title }} </h3>
+        <hr style="border: 1px solid grey;"> <!-- Горизонтальна лінія між записами -->
+        <h4> {{ el.description }} </h4>
+        <hr style="border: 1px dashed grey;">
+        <h4> {{ el.completed}} </h4>
+        <hr style="border: 1px dashed grey;">
+        <h4> {{ el.created}} </h4>
+        <hr style="border: 1px dashed grey;">
+         {% if el.pk %}
+    <a href="{% url 'task-update' el.pk %}" class="btn btn-info float-end me-3">
+        <h2>Edit</h2>
+    </a>
+{% else %}
+    <p>Error: Task ID is missing!</p>
+{% endif %}
+
+
+    </div>
+
+    {% endfor %}
+     {% else %}
+    <p> Поки не має тасків </p>
+    {% endif %}
+
+
+
+
+</div>
+
+{% endblock %}
