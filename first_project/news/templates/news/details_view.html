@@ -6,12 +6,12 @@
 
 <div class="features2">
     <a href="{% url 'news_home' %}" class="btn btn-warning"> <h2> <-- </h2> </a>
-   <h1>{{ article.title }}</h1>
+    <h1>{{ article.title }}</h1>
     <p>{{ article.date }}</p>
     <p>{{ article.content }}</p>
-   <p> </p>
+    <p> </p>
     <a href="{% url 'news-delete' article.id %}" class="btn btn-danger float-end me-3"> <h2> Delete </h2> </a>
-<a href="{% url 'news-update' article.id %}" class="btn btn-info float-end me-3"> <h2> Edit </h2> </a>
+    <a href="{% url 'news-update' article.id %}" class="btn btn-info float-end me-3"> <h2> Edit </h2> </a>
     </div>
 
 

@@ -5,7 +5,7 @@
 
 {% block body %}
 
-<div class="features">
+<div class="features2">
 
     {% if tasks %}
     {% for el in tasks %}
@@ -20,9 +20,15 @@
         <h4> {{ el.created}} </h4>
         <hr style="border: 1px dashed grey;">
          {% if el.pk %}
-    <a href="{% url 'task-update' el.pk %}" class="btn btn-info float-end me-3">
-        <h2>Edit</h2>
-    </a>
+
+             <a href="{% url 'task-update' el.pk %}" class="btn btn-info float-end me-3">
+                 <h2> Edit </h2>
+             </a>
+            <a href="{% url 'task-delete' el.pk %}" class="btn btn-danger float-end me-3">
+                 <h2> Delete </h2>
+            </a>
+
+
 {% else %}
     <p>Error: Task ID is missing!</p>
 {% endif %}

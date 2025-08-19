@@ -1,0 +1,171 @@
+ Шпаргалка для створення Django-проєкту з нуля
+ 1. Створення основи проєкту
+
+1. Створення віртуального оточення**:
+
+   python -m venv .venv
+
+Активація:
+- Windows PowerShell:
+
+     .\.venv\Scripts\Activate.ps1
+
+- Linux/MacOS**:
+
+     source .venv/bin/activate
+
+1. Встановлення Django:
+
+   pip install django
+
+1. Створення проєкту:
+
+   django-admin startproject my_project
+   cd my_project
+
+ 2. Запуск сервера розробки
+1. Переконайтесь, що все працює:
+
+   python manage.py runserver
+
+Сторінка за замовчуванням буде доступна за адресою [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+ 3. Створення додатку
+1. Створення додатка:
+
+   python manage.py startapp main
+
+Додаток буде створено в папці `my_project/main/`.
+1. Реєстрація додатка в `settings.py`**: Відкрийте `my_project/settings.py` і додайте новий додаток до списку `INSTALLED_APPS`:
+
+   INSTALLED_APPS = [
+       ...,
+       'main',
+   ]
+
+ 4. Налаштування маршрутів
+1. Головний файл маршрутів `my_project/urls.py`**: Вносимо зміни для підключення маршрутів додатка:
+
+   from django.urls import path, include
+
+   urlpatterns = [
+       path('admin/', admin.site.urls),
+       path('', include('main.urls')),  # Маршрути з додатка "main"
+   ]
+
+1. Створення маршруту для додатка (`main/urls.py`)**: Створіть файл `urls.py` в папці додатка:
+
+   from django.urls import path
+   from . import views
+
+   urlpatterns = [
+       path('', views.index, name='home'),  # Головна сторінка
+   ]
+```
+ 5. Взаємодія з базою даних
+1. Описані моделі в `models.py`: Наприклад, створюємо модель:
+
+   from django.db import models
+
+   class Article(models.Model):
+       title = models.CharField(max_length=100)
+       content = models.TextField()
+       date = models.DateTimeField(auto_now_add=True)
+
+1. Створення та застосування міграцій**:
+
+   python manage.py makemigrations
+   python manage.py migrate
+
+1. Реєстрація моделей в адміністративній панелі ()`admin.py`:
+
+   from django.contrib import admin
+   from .models import Article
+
+   admin.site.register(Article)
+
+1. Створення адміністратора**:
+
+   python manage.py createsuperuser
+
+ 6. Робота з шаблонами
+1. Структура шаблонів у додатку (`main/templates/main`)**. Створіть в папці додатка `templates` і підпапку з назвою додатка, наприклад `main/templates/main/`. Далі додайте HTML-файли:
+ html
+   <!-- main/templates/main/index.html -->
+   <!DOCTYPE html>
+   <html>
+   <head>
+       <title>Головна сторінка</title>
+   </head>
+   <body>
+       <h1>Привіт, Django!</h1>
+   </body>
+   </html>
+```
+1. Метод для передачі шаблону (`views.py`):
+
+   from django.shortcuts import render
+
+   def index(request):
+       return render(request, 'main/index.html')
+
+7. Робота з формами
+1. Створіть файл `forms.py` у відповідному додатку:
+ python
+   from django import forms
+   from .models import Article
+
+   class ArticleForm(forms.ModelForm):
+       class Meta:
+           model = Article
+           fields = ['title', 'content']
+
+1. Обробка форми у `views.py`:
+
+   from django.shortcuts import render
+   from .forms import ArticleForm
+
+   def create(request):
+       form = ArticleForm()
+       return render(request, 'main/create.html', {'form': form})
+
+1. Форма в шаблоні (`create.html`):
+
+   <form method="post">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <button type="submit">Зберегти</button>
+   </form>
+
+ 8. Завантаження статичних файлів
+1. Налаштування статичних файлів у `settings.py`:
+
+   STATIC_URL = '/static/'
+
+1. Створення папки для статичних файлів `main/static/main/`**: Наприклад, додайте файл `styles.css`:
+``` css
+   body {
+       font-family: Arial, sans-serif;
+   }
+```
+1. Підключення стилів у шаблоні**:
+
+   <link rel="stylesheet" type="text/css" href="{% static 'main/styles.css' %}">
+
+ 9. Запуск проєкту
+- Для запуску локального сервера:
+
+   python manage.py runserver
+
+10. Корисні команди:
+- Створення нової програми:
+
+   python manage.py startapp app_name
+
+- Видалення кешу у браузері** (оновлення CSS):
+    - Chrome: `Ctrl + F5` або `Ctrl + Shift + R`.
+
+ 11. Інші корисні ресурси:
+- Сайт іконок для дизайну: [Font Awesome](https://fontawesome.com/icons)
+- Django документація: [Django Docs](https://docs.djangoproject.com/)
+
+Ця послідовність допоможе правильно організувати ваш Django-проєкт!

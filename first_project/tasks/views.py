@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView, UpdateView, DeleteView
+from django.views.generic import UpdateView, DeleteView
 from .forms import TaskForm
 from .models import Task
 
@@ -29,8 +29,6 @@ def create(request):
 
     context = {'form': form, 'error': error}
 
-    #form = TaskForm()
-    #context = {'form': form}
     return render(request, 'tasks/create.html', context)
 
 
@@ -43,4 +41,11 @@ class TaskUpdateView(UpdateView):
     def get(self, request, *args, **kwargs):
         print(f"PK received: {kwargs.get('pk')}")  # Дебагуємо значення pk
         return super().get(request, *args, **kwargs)
+
+
+class TaskDeleteView(DeleteView):
+    model = Task
+    template_name = 'tasks/delete.html'
+    success_url = '/tasks/' # юрл адреса куди переадресується юзер після успішного видалення
+    context_object_name = 'task'
 
